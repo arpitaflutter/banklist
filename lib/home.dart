@@ -26,8 +26,7 @@ class _homeState extends State<home> {
         ),
         body: ListView.builder(
           itemCount: bname.length,
-          itemBuilder: (context, index) {
-            InkWell(
+          itemBuilder: (context, index) => InkWell(
               onTap: () {
                 if (index == 0) {
                   bank b1 = bank(
@@ -66,9 +65,7 @@ class _homeState extends State<home> {
                   Navigator.pushNamed(context, 'bank1', arguments: b1);
                 }
               },
-              child: ui(bname[index]));
-            // );
-          },
+              child: ui(bname[index])),
         ),
       ),
     );
@@ -76,14 +73,15 @@ class _homeState extends State<home> {
 
   Widget ui(String name) {
     return Container(
-      height: 280,
+      height: 70,
+      margin: EdgeInsets.all(8),
       width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
         border: Border.all(color: Colors.black45),
         boxShadow: [
           BoxShadow(
-              color: Colors.black26,
+              color: Colors.white,
               spreadRadius: 3,
               blurRadius: 4,
               offset: Offset(0, 2)),
@@ -92,12 +90,15 @@ class _homeState extends State<home> {
       child: Container(
           height: 50,
           width: double.infinity,
-          child: Row(
-            children: [
-              Text("$name"),
-              Spacer(),
-              Icon(Icons.arrow_forward),
-            ],
+          child: Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("$name"),
+                Icon(Icons.arrow_forward),
+              ],
+            ),
           )),
     );
   }

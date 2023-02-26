@@ -1,6 +1,6 @@
 class bank
 {
-  String? name,url,contact,customer_care,sms;
+  String? name,url,contact,sms;
 
-  bank({this.name, this.url, this.contact, this.customer_care, this.sms});
+  bank({this.name, this.url, this.contact, this.sms});
 }
